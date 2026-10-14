@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kamo Café · Ituango</title>
+<meta name="description" content="Café 100% arábica de origen, de la finca Las Agüitas en Ituango, Antioquia. Tradición familiar de don Antonio, recolectado por mujeres campesinas.">
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta property="og:title" content="Kamo Café · Café de origen de Ituango">
+<meta property="og:description" content="100% arábica, finca Las Agüitas, 1.200–1.300 msnm. Pídelo por WhatsApp.">
+<meta property="og:image" content="https://haroldco45.github.io/kamo-cafe/og-kamo.jpg?v=1">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--rojo:#EB0A1E;--negro:#000;--tinta:#111;--gris:#58595B;--claro:#F5F5F5;--linea:#E3E3E3;--cafe:#4A2C1A;--kraft:#C9A27A}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Barlow,system-ui,sans-serif;color:var(--tinta);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* barra */
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--linea)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.02em}
+.marca img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+nav{display:flex;gap:22px;font-size:14px;font-weight:600}
+nav a{text-decoration:none;color:var(--gris)}nav a:hover{color:var(--negro)}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 26px;font-weight:600;font-size:15px;text-decoration:none;border:2px solid var(--negro);cursor:pointer;transition:.2s;font-family:inherit;background:none}
+.pill.negra{background:var(--negro);color:#fff}.pill.negra:hover{background:#333;border-color:#333}
+.pill.roja{background:var(--rojo);border-color:var(--rojo);color:#fff}.pill.roja:hover{filter:brightness(.92)}
+.pill.blanca{border-color:#fff;color:#fff}.pill.blanca:hover{background:#fff;color:#000}
+@media(max-width:760px){nav{display:none}}
+/* hero */
+.hero{position:relative;background:#0c0806;color:#fff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:min(86vh,720px)}
+.hero-txt{display:flex;flex-direction:column;justify-content:center;padding:56px 20px 56px max(20px,calc((100vw - 1180px)/2 + 20px))}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--kraft)}
+h1{font-family:"Barlow Condensed",Barlow,sans-serif;font-size:clamp(46px,8vw,92px);line-height:.95;font-weight:700;margin:14px 0 18px;letter-spacing:-.01em}
+h1 span{color:var(--rojo)}
+.hero-txt p{font-size:18px;color:#d9d2cc;max-width:30em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-img{position:relative}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0c0806 0%,transparent 28%)}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-img{order:-1;height:62vh}.hero-img::after{background:linear-gradient(0deg,#0c0806 0%,transparent 40%)}.hero-txt{padding:8px 20px 48px}}
+/* specs tipo ficha técnica */
+.specs{background:#fff;border-bottom:1px solid var(--linea)}
+.specs-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.spec{padding:28px 20px;border-right:1px solid var(--linea)}
+.spec:last-child{border-right:0}
+.spec b{display:block;font-family:"Barlow Condensed",Barlow,system-ui,sans-serif;font-size:40px;line-height:1;font-weight:700}
+.spec b small{font-size:18px;font-weight:600;color:var(--gris)}
+.spec span{font-size:13px;color:var(--gris);text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:760px){.specs-grid{grid-template-columns:repeat(2,1fr)}.spec:nth-child(2){border-right:0}.spec:nth-child(-n+2){border-bottom:1px solid var(--linea)}}
+/* secciones */
+section{padding:84px 0}
+.sec-head{max-width:720px;margin-bottom:40px}
+.sec-head .eyebrow{color:var(--rojo)}
+h2{font-family:"Barlow Condensed",Barlow,system-ui,sans-serif;font-size:clamp(34px,5vw,54px);line-height:1.02;font-weight:700;margin-top:8px}
+.sec-head p{color:var(--gris);font-size:17px;margin-top:12px}
+.gris{background:var(--claro)}
+/* historia */
+.historia{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.historia figure{position:relative}
+.historia figure img{width:100%;border-radius:4px;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+.historia figcaption{font-size:13px;color:var(--gris);margin-top:10px}
+.historia blockquote{font-family:"Barlow Condensed",Barlow,system-ui,sans-serif;font-size:30px;line-height:1.15;font-weight:600;border-left:4px solid var(--rojo);padding-left:18px;margin:22px 0}
+.historia p{color:#333;font-size:17px;margin-bottom:14px}
+@media(max-width:860px){.historia{grid-template-columns:1fr;gap:32px}}
+/* del cafetal a la taza */
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--linea);border:1px solid var(--linea)}
+.paso{background:#fff;padding:30px 22px}
+.paso .n{font-family:"Barlow Condensed",Barlow,system-ui,sans-serif;font-size:15px;font-weight:700;color:var(--rojo);letter-spacing:.1em}
+.paso h3{font-size:20px;margin:8px 0 8px}
+.paso p{font-size:15px;color:var(--gris)}
+@media(max-width:860px){.pasos{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pasos{grid-template-columns:1fr}}
+/* configurador */
+.config{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.config-img{position:sticky;top:84px;background:#fff;border:1px solid var(--linea);border-radius:4px;overflow:hidden}
+.config-img img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.config-img .tag{position:absolute;margin:14px;background:#000;color:#fff;font-size:12px;font-weight:600;letter-spacing:.08em;padding:6px 12px;border-radius:999px;text-transform:uppercase}
+.grupo{margin-bottom:28px}
+.grupo h4{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--gris);margin-bottom:12px}
+.opciones{display:flex;flex-wrap:wrap;gap:10px}
+.op{border:1.5px solid var(--linea);background:#fff;border-radius:999px;padding:11px 20px;font:600 15px Barlow;cursor:pointer;transition:.15s}
+.op:hover{border-color:#888}
+.op[aria-pressed=true]{border-color:#000;background:#000;color:#fff}
+.cant{display:inline-flex;align-items:center;border:1.5px solid var(--linea);border-radius:999px;overflow:hidden}
+.cant button{width:46px;height:46px;border:0;background:#fff;font-size:22px;cursor:pointer}
+.cant output{min-width:48px;text-align:center;font-weight:700;font-size:18px}
+.resumen{border-top:1px solid var(--linea);padding-top:22px;margin-top:6px}
+.resumen .linea{display:flex;justify-content:space-between;font-size:15px;color:var(--gris);margin-bottom:6px}
+.resumen .total{font-size:20px;color:#000;font-weight:700}
+.campo{width:100%;border:1.5px solid var(--linea);border-radius:6px;padding:13px 14px;font:16px Barlow;margin-top:8px}
+.nota{font-size:13px;color:var(--gris);margin-top:10px}
+@media(max-width:860px){.config{grid-template-columns:1fr}.config-img{position:static}}
+/* videos */
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.video{background:#000;border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.video iframe{width:100%;border:0;background:#111}
+.video .pie{background:#fff;padding:14px 16px;font-size:14px;color:var(--gris);border:1px solid var(--linea);border-top:0;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.video .pie a{font-weight:600;color:#000;white-space:nowrap}
+/* galería */
+.galeria{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}
+.galeria button{border:0;padding:0;cursor:zoom-in;overflow:hidden;border-radius:4px;background:#ddd}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.galeria button:hover img{transform:scale(1.04)}
+.galeria .g1{grid-row:span 2;aspect-ratio:1/1}
+.galeria .g2,.galeria .g3{aspect-ratio:1/1}
+.galeria .g4{grid-column:span 2;aspect-ratio:2/1}
+@media(max-width:620px){.galeria{grid-template-columns:1fr 1fr}.galeria .g1{grid-column:span 2;grid-row:auto}.galeria .g4{grid-column:span 2}}
+dialog{border:0;padding:0;background:transparent;max-width:94vw;max-height:92vh;margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.88)}
+dialog img{max-width:94vw;max-height:86vh;object-fit:contain}
+dialog button{position:fixed;top:16px;right:16px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;font-size:22px;cursor:pointer}
+/* origen */
+.origen{background:#0c0806;color:#fff}
+.origen .sec-head p{color:#cfc6bf}
+.origen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#2a1f18}
+.origen-grid div{background:#0c0806;padding:28px 22px}
+.origen-grid b{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--kraft);margin-bottom:6px}
+.origen-grid span{font-size:18px}
+@media(max-width:760px){.origen-grid{grid-template-columns:1fr}}
+/* contacto */
+.contacto{text-align:center}
+.contacto h2{max-width:16em;margin:8px auto 14px}
+.contacto p{color:var(--gris);max-width:36em;margin:0 auto 26px}
+footer{border-top:1px solid var(--linea);padding:28px 0 100px;font-size:13px;color:var(--gris)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.flotante{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.flotante svg{width:32px;height:32px;fill:#fff}
+:focus-visible{outline:3px solid var(--rojo);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="marca" href="#inicio"><img src="icon-192.png" alt="">KAMO CAFÉ</a>
+    <nav>
+      <a href="#historia">Historia</a>
+      <a href="#proceso">Del cafetal a la taza</a>
+      <a href="#videos">Videos</a>
+      <a href="#pedir">Pedir</a>
+    </nav>
+    <a class="pill negra" href="#pedir" style="padding:9px 20px;font-size:14px">Pedir café</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio" style="padding:0">
+  <div class="hero-grid">
+    <div class="hero-txt">
+      <div class="eyebrow">Ituango · Antioquia · Colombia</div>
+      <h1>Café de origen.<br>Hecho con <span>tradición</span>.</h1>
+      <p>Kamo Café es 100% arábica, cultivado por la familia de don Antonio en la finca Las Agüitas, entre 1.200 y 1.300 metros sobre el nivel del mar, y recolectado a mano por mujeres campesinas.</p>
+      <div class="cta">
+        <a class="pill roja" href="#pedir">Arma tu pedido</a>
+        <a class="pill blanca" href="#videos">Ver videos</a>
+      </div>
+    </div>
+    <div class="hero-img"><img src="kamo-empaque.jpg" alt="Empaque kraft de Kamo Café sostenido frente a un cafetal con granos maduros" fetchpriority="high"></div>
+  </div>
+</section>
+
+<div class="specs">
+  <div class="wrap specs-grid">
+    <div class="spec"><b>100<small>%</small></b><span>Arábica</span></div>
+    <div class="spec"><b>1.300<small> msnm</small></b><span>Altura de la finca</span></div>
+    <div class="spec"><b>A mano</b><span>Recolección campesina</span></div>
+    <div class="spec"><b>Familiar</b><span>Finca Las Agüitas</span></div>
+  </div>
+</div>
+
+<section id="historia">
+  <div class="wrap historia">
+    <figure>
+      <img src="kamo-etiqueta.jpg" alt="Etiqueta de Kamo Café con la foto de don Antonio, campesino con sombrero y carriel" loading="lazy">
+      <figcaption>Don Antonio en la etiqueta de cada bolsa de Kamo Café.</figcaption>
+    </figure>
+    <div>
+      <div class="eyebrow" style="color:var(--rojo)">La historia</div>
+      <h2>El legado de don Antonio, en cada taza.</h2>
+      <blockquote>Aroma y sabor. Cuidado y respeto por la naturaleza.</blockquote>
+      <p>En la vereda Las Agüitas de Ituango, muy cerca de la zona de Hidroituango, una familia campesina mantiene viva la tradición cafetera que heredó de don Antonio.</p>
+      <p>El grano lo recogen manos de mujeres campesinas, luchadoras y soñadoras. Comprar Kamo Café es apoyar directamente a una familia del campo antioqueño, sin intermediarios grandes de por medio.</p>
+      <p>Además del café, el emprendimiento trabaja <strong>cacao artesanal</strong> de la misma tierra.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gris" id="proceso">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Del cafetal a la taza</div>
+      <h2>Cuatro pasos, una sola familia.</h2>
+    </div>
+    <div class="pasos">
+      <div class="paso"><div class="n">01</div><h3>Cultivo</h3><p>Café arábica sembrado en la finca Las Agüitas, a más de 1.200 metros de altura.</p></div>
+      <div class="paso"><div class="n">02</div><h3>Recolección</h3><p>Grano a grano, solo el maduro, por mujeres campesinas de la vereda.</p></div>
+      <div class="paso"><div class="n">03</div><h3>Beneficio</h3><p>Proceso cuidadoso en finca, con respeto por el agua y la naturaleza.</p></div>
+      <div class="paso"><div class="n">04</div><h3>Tu taza</h3><p>Empacado en bolsa kraft con válvula y cierre, listo para despachar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pedir">
+  <div class="wrap config">
+    <div class="config-img">
+      <span class="tag">Kamo Café</span>
+      <img src="kamo-empaque.jpg" alt="Bolsa de Kamo Café" loading="lazy">
+    </div>
+    <div>
+      <div class="eyebrow" style="color:var(--rojo)">Arma tu pedido</div>
+      <h2 style="margin-bottom:28px">Elige y te lo despachamos.</h2>
+
+      <div class="grupo">
+        <h4>Producto</h4>
+        <div class="opciones" data-grupo="producto">
+          <button class="op" aria-pressed="true">Café</button>
+          <button class="op" aria-pressed="false">Cacao</button>
+          <button class="op" aria-pressed="false">Combo café + cacao</button>
+        </div>
+      </div>
+      <div class="grupo" id="g-pres">
+        <h4>Presentación</h4>
+        <div class="opciones" data-grupo="presentacion">
+          <button class="op" aria-pressed="true">Molido</button>
+          <button class="op" aria-pressed="false">En grano</button>
+        </div>
+      </div>
+      <div class="grupo">
+        <h4>Tamaño</h4>
+        <div class="opciones" data-grupo="tamano">
+          <button class="op" aria-pressed="false">250 g</button>
+          <button class="op" aria-pressed="true">500 g</button>
+          <button class="op" aria-pressed="false">1 kg</button>
+        </div>
+      </div>
+      <div class="grupo">
+        <h4>Cantidad</h4>
+        <div class="cant"><button type="button" id="menos" aria-label="Menos">−</button><output id="n">1</output><button type="button" id="mas" aria-label="Más">+</button></div>
+      </div>
+      <div class="grupo">
+        <h4>Tus datos</h4>
+        <input class="campo" id="nombre" placeholder="Tu nombre" autocomplete="name">
+        <input class="campo" id="ciudad" placeholder="Ciudad o municipio de entrega" autocomplete="address-level2">
+      </div>
+
+      <div class="resumen">
+        <div class="linea"><span>Pedido</span><span id="r-txt">1 × Café molido 500 g</span></div>
+        <div class="linea total"><span>Precio</span><span>Te lo confirmamos por WhatsApp</span></div>
+        <button class="pill roja" id="enviar" style="width:100%;margin-top:18px;padding:16px">Enviar pedido por WhatsApp</button>
+        <p class="nota">Despachos a todo el país. El flete se acuerda por WhatsApp según tu ciudad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gris" id="videos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Videos reales</div>
+      <h2>Conoce la finca y a su gente.</h2>
+      <p>Publicados por Kamo Café y por el Informativo Digital Heraldo del Norte de Ituango.</p>
+    </div>
+    <div class="videos">
+      <div class="video">
+        <iframe src="https://www.instagram.com/reel/DdCKWPzgbcL/embed" height="620" loading="lazy" allowtransparency="true" allow="encrypted-media" title="Reel de Kamo Café en Instagram"></iframe>
+        <div class="pie"><span>Reel en Instagram</span><a href="https://www.instagram.com/reel/DdCKWPzgbcL/" target="_blank" rel="noopener">Abrir ↗</a></div>
+      </div>
+      <div class="video">
+        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FItuango1%2Fvideos%2F2553098775165534%2F&show_text=false&width=380" height="620" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen title="Video de Kamo Café en Facebook"></iframe>
+        <div class="pie"><span>Video en Facebook · Ituango</span><a href="https://www.facebook.com/Ituango1/videos/2553098775165534/" target="_blank" rel="noopener">Abrir ↗</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--rojo)">Galería</div>
+      <h2>Así llega a tu casa.</h2>
+    </div>
+    <div class="galeria">
+      <button class="g1" data-src="kamo-empaque.jpg"><img src="kamo-empaque.jpg" alt="Bolsa de Kamo Café frente al cafetal" loading="lazy"></button>
+      <button class="g2" data-src="kamo-etiqueta.jpg"><img src="kamo-etiqueta.jpg" alt="Etiqueta de Kamo Café" loading="lazy"></button>
+      <button class="g3" data-src="kamo-don-antonio.jpg"><img src="kamo-don-antonio.jpg" alt="Don Antonio en la etiqueta" loading="lazy"></button>
+      <button class="g4" data-src="kamo-cafetal.jpg"><img src="kamo-cafetal.jpg" alt="Ramas de café con granos maduros en la finca" loading="lazy" style="object-position:center 30%"></button>
+    </div>
+  </div>
+</section>
+<dialog id="visor"><button aria-label="Cerrar" onclick="this.parentElement.close()">✕</button><img alt=""></dialog>
+
+<section class="origen">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Ficha de origen</div>
+      <h2>De dónde viene tu café.</h2>
+      <p>Un café con nombre, finca y vereda. Así se sabe exactamente qué te estás tomando.</p>
+    </div>
+    <div class="origen-grid">
+      <div><b>Finca</b><span>Las Agüitas</span></div>
+      <div><b>Vereda / Municipio</b><span>Las Agüitas, Ituango, Antioquia</span></div>
+      <div><b>Variedad</b><span>100% arábica</span></div>
+      <div><b>Altura</b><span>1.200 – 1.300 msnm</span></div>
+      <div><b>Recolección</b><span>Manual, por mujeres campesinas</span></div>
+      <div><b>Productos</b><span>Café de origen y cacao artesanal</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contacto">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--rojo)">Pide hoy</div>
+    <h2>Apoya al campo de Ituango con cada taza.</h2>
+    <p>Escríbenos por WhatsApp, te confirmamos precio, disponibilidad y flete a tu ciudad.</p>
+    <div class="cta" style="justify-content:center">
+      <a class="pill roja" id="wa-cta" href="#">Escribir por WhatsApp</a>
+      <button class="pill" id="compartir">Compartir esta app</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Kamo Café &amp; Cacao · Vereda Las Agüitas, Ituango, Antioquia</span>
+    <span>App hecha por <strong>Vibras Positivas HM</strong> · 311 770 0431</span>
+  </div>
+</footer>
+
+<a class="flotante" id="wa-flot" href="#" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg></a>
+
+<script>
+// Número que recibe los pedidos (cámbialo por el de Kamo Café si te lo pasan)
+const WA = "573117700431";
+const URL_APP = "https://haroldco45.github.io/kamo-cafe/";
+
+const sel = {producto:"Café", presentacion:"Molido", tamano:"500 g"};
+let n = 1;
+const $ = s => document.querySelector(s);
+
+document.querySelectorAll(".opciones").forEach(g=>{
+  g.addEventListener("click",e=>{
+    const b=e.target.closest(".op"); if(!b) return;
+    g.querySelectorAll(".op").forEach(x=>x.setAttribute("aria-pressed","false"));
+    b.setAttribute("aria-pressed","true");
+    sel[g.dataset.grupo]=b.textContent.trim();
+    pintar();
+  });
+});
+$("#menos").onclick=()=>{ if(n>1){n--;pintar();} };
+$("#mas").onclick=()=>{ if(n<50){n++;pintar();} };
+
+function descripcion(){
+  const pres = sel.producto==="Café" ? " "+sel.presentacion.toLowerCase() : "";
+  return `${n} × ${sel.producto}${pres} ${sel.tamano}`;
+}
+function pintar(){
+  $("#n").textContent=n;
+  $("#g-pres").style.display = sel.producto==="Café" ? "" : "none";
+  $("#r-txt").textContent=descripcion();
+}
+
+function horaColombia(){
+  return new Intl.DateTimeFormat("es-CO",{timeZone:"America/Bogota",dateStyle:"long",timeStyle:"short"}).format(new Date());
+}
+function wa(texto){ return `https://wa.me/${WA}?text=${encodeURIComponent(texto)}`; }
+
+$("#enviar").onclick=()=>{
+  const nom=$("#nombre").value.trim(), ciu=$("#ciudad").value.trim();
+  const t=`☕ *Pedido Kamo Café*\n\n${descripcion()}\n${nom?`Nombre: ${nom}\n`:""}${ciu?`Entrega en: ${ciu}\n`:""}\nFecha: ${horaColombia()} (hora Colombia)\n\n¿Me confirman precio y flete, por favor?`;
+  window.open(wa(t),"_blank");
+};
+const saludo = wa("Hola 👋 Vi la app de Kamo Café de Ituango y quiero información para pedir café.");
+$("#wa-cta").href=saludo; $("#wa-cta").target="_blank";
+$("#wa-flot").href=saludo;
+
+$("#compartir").onclick=async()=>{
+  const d={title:"Kamo Café · Ituango",text:"Café de origen 100% arábica de la finca Las Agüitas, Ituango ☕",url:URL_APP};
+  if(navigator.share){ try{await navigator.share(d);}catch(e){} }
+  else window.open(`https://wa.me/?text=${encodeURIComponent(d.text+" "+d.url)}`,"_blank");
+};
+
+const visor=$("#visor");
+document.querySelectorAll(".galeria button").forEach(b=>b.onclick=()=>{
+  visor.querySelector("img").src=b.dataset.src;
+  visor.querySelector("img").alt=b.querySelector("img").alt;
+  visor.showModal();
+});
+visor.addEventListener("click",e=>{ if(e.target===visor) visor.close(); });
+
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
+</html>
